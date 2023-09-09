@@ -7,6 +7,23 @@
 //Strings//СТРОКИ
 
 
+//tolower - функция принимающая символ и возвращающая его в нижнем регистре
+std::string lowercase(std::string str) {
+	std::string tmp;//""
+	for (int i = 0; i < str.length(); i++)//str.length - возвращает длину строки
+		tmp += std::tolower(str[i]);
+	return tmp;
+}
+
+
+//toapper - функция принимающая символ и возвращающая его в верхнем регистре
+std::string uppercase(std::string str) {
+	std::string tmp;//""
+	for (int i = 0; i < str.length(); i++)//str.length - возвращает длину строки
+		tmp += std::toupper(str[i]);
+	return tmp;
+}
+
 
 int main() {
 	system("chcp 1251>nul");
@@ -87,6 +104,14 @@ int main() {
 
 	int num = std::stoi(strnum);
 	std::cout << num << std::endl;
+	
+
+	//Работа с регистром
+	std::cout << "Введите строку -> ";
+	std::string case_str;
+	std::getline(std::cin, case_str);
+	std::cout << lowercase(case_str) << std::endl;
+	std::cout << uppercase(case_str) << std::endl;
 
 
 	return 0;
